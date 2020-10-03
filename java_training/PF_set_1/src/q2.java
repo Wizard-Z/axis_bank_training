@@ -1,43 +1,38 @@
-import java.util.Arrays;
 import java.util.Scanner;
-// This question is yet to be done. rest all are done.
+
+
 public class q2 {
-
-	public static void main(String[] args)throws Exception {
-		Scanner scnr = new Scanner(System.in);
-		int size=0;
-		boolean flag = true;
-		int[] arr=new int[20];
-		try {
-			size = scnr.nextInt();
-			if (size<0)
-				throw(new Exception());
-			arr = new int[size];
-			int temp;
-			for(int i=0;i<size;i++) {
-				temp = scnr.nextInt();
-				if(temp<0)
-					throw(new Exception());
-				arr[i]=temp;
-			}
-			scnr.close();
+	public static void main(String[] args) {
+		Scanner scrn = new Scanner(System.in);
+		int size = scrn.nextInt();
+		if(size<0)
+			terminate();
+		int[] arr = new int[size];
+		for(int i=0;i<size; i++) {
+			arr[i] = scrn.nextInt();
+			if(arr[i]<0)
+				terminate();
 		}
-		catch(Exception e) {
-			flag = false;
-			System.out.println("Invalid Input");
-		}
-		if(flag)
-			System.out.println(countRepeaters(arr, size));
-
+		scrn.close();
+		System.out.println(countRepeaters(arr, size));
 	}
+	// returns repeated counts.
 	static int countRepeaters(int[] arr, int size) {
-		int c = 0;
-		System.out.println(Arrays.toString(arr)+":"+size);
-		for(int i=0;i<size;i++) {
-			for(int j=i+1;j<size;j++) {
-				c += (arr[i]==arr[j])?1:0;
+		int repeated_element = 0;// which element is repeated
+		int count = 0;//its count. 2 for loop used. O(n).
+		for(int i=0; i<size;i++) {
+			for(int j=i+1; j<size; j++) {
+				if(arr[i]==arr[j])
+					repeated_element = arr[i];
 			}
 		}
-		return c;
+		// utmost only one element would be repeated
+		for(int n: arr)
+			count += (repeated_element == n)?1:0;
+		return count;
+	}
+	static void terminate() {
+		System.out.println("Invalid input");
+		System.exit(0);
 	}
 }
