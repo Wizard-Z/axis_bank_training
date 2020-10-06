@@ -2,11 +2,6 @@ package com.book;
 
 public class Book {
 	private String bookId;
-	@Override
-	public String toString() {
-		return "Book [bookId=" + bookId + ", title=" + title + ", author=" + author + ", category=" + category
-				+ ", price=" + price + "]";
-	}
 	private String title;
 	private String author;
 	private String category;
@@ -14,12 +9,14 @@ public class Book {
 	// Parameterized Constructor
 	
 	public Book(String bookId, String title, String author, String category, float price) {
+		// check
 		if (bookId.length()==4 && bookId.charAt(0) == 'B')
 			this.bookId = bookId;
 		else
 			System.out.println(":Invalid Book Id:");
 		this.title = title;
 		this.author = author;
+		// check
 		if(category.equals("Science") || category.equals("Fiction") || category.equals("Technology") || category.equals("Others"))
 			this.category = category;
 		else 
@@ -46,7 +43,10 @@ public class Book {
 	}
 
 	public void setBookId(String bookId) {
-		this.bookId = bookId;
+		if (bookId.length()==4 && bookId.charAt(0) == 'B')
+			this.bookId = bookId;
+		else
+			System.out.println(":Invalid Book Id:");
 	}
 
 	public String getCategory() {
@@ -54,7 +54,10 @@ public class Book {
 	}
 
 	public void setCategory(String category) {
-		this.category = category;
+		if(category.equals("Science") || category.equals("Fiction") || category.equals("Technology") || category.equals("Others"))
+			this.category = category;
+		else 
+			System.out.println(":Invalid Category:");
 	}
 
 	public void setTitle(String title) {
@@ -64,11 +67,10 @@ public class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
-	
-
-	
-
-	
+	@Override
+	public String toString() {
+		return "Book [bookId=" + bookId + ", title=" + title + ", author=" + author + ", category=" + category
+				+ ", price=" + price + "]";
+	}	
 
 }

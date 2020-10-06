@@ -1,29 +1,41 @@
 package com.bookUtil;
 import java.util.Scanner;
 
+
 import com.book.*;
 public class BookUtil {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 		BookStore bookStore;
 		//Book b;
+		System.out.println("Enter size of Book Store");
+		int size = scnr.nextInt();
 		System.out.println("Enter 3 Books");
-		int size = 3;
+		//int size = 3;
 		bookStore = new BookStore(size);
+		scnr.nextLine();
+		
+		//Getting details for the bookStore
 		System.out.println("Enter details in the format\n bookId, title, author, category, price");
 		String bookId = null, title = null, author = null, category = null;
 		float price = 0;
+		
 		for(int i=0;i<size;i++) {
 			System.out.println("Entering.."+(i+1));
+			System.out.println("Book Id:");
 			bookId = scnr.nextLine();
+			System.out.println("Title:");
 			title = scnr.nextLine();
+			System.out.println("Author");
 			author = scnr.nextLine();
+			System.out.println("Category:");
 			category = scnr.nextLine();
+			System.out.println("Price:");
 			price = scnr.nextFloat();
 			scnr.nextLine();
 			bookStore.addBook(new Book(bookId, title, author,category, price));
 		}
-		printOptions();
+		printOptions();// Menu.
 		int ch;
 		boolean flag = true;
 		while(flag) {
