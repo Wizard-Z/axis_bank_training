@@ -16,12 +16,15 @@ public class two {
 		for(int t:acTemp)
 			s+=t;
 		int avg = s/N;
+		int diff = (thr-avg)/2;
+		
 		//System.out.println(avg);
-		int count=0; // counter variable
-		for(int i=avg+2;i<thr;i+=2)
-			count++;
+		//int count=0; // counter variable
+		//for(int i=avg+2;i<thr;i+=2)
+		//	count++;
 		//System.out.println(count+":"+stu);
-		System.out.println((avg%2==0)?count*stu:(count*stu)+stu-1);// did mistake here.
+		
+		System.out.println((avg%2==0 && thr%2==0||avg%2!=0 &&thr%2!=0)?diff*stu:(diff*stu)+stu-1);// did mistake here.
 															// I explictly added 5 instead of this.
 			
 		
