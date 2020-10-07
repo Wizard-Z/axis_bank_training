@@ -10,7 +10,7 @@ public class BookUtil {
 		//Book b;
 		System.out.println("Enter size of Book Store");
 		int size = scnr.nextInt();
-		System.out.println("Enter 3 Books");
+		System.out.println("Enter "+size+"Books");
 		//int size = 3;
 		bookStore = new BookStore(size);
 		scnr.nextLine();
