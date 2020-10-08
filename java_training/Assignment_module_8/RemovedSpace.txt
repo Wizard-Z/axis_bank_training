@@ -1,0 +1,4 @@
+Line one has no extra spaces.
+Line two has som many extra spaces remove it.
+normal line goes here.
+Hello this is not goood... bye.
