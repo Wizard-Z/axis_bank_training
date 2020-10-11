@@ -1,0 +1,10 @@
+PNR: PD_21201213_102
+Train no: 1231
+From: Patna
+To: Delhi
+Travel Date: 13/12/2120
+
+Passengers: 
+Name	Age	Gender	Fare
+Sourabh	24	M	9900.0
+Total Fare: 9900.0
