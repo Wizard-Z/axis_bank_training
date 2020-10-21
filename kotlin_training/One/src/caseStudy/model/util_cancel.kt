@@ -12,14 +12,16 @@ fun cancelBooking(cid:Int){
     else{
         val roomD = roomsDAO()
         val roomDetail = roomD.getRoomsDetails(cd.type)
+        var bookingAmount = roomDetail?.price ?:0
         if (cd.full_pay=="Yes"){
-            val bookingAmount = roomDetail?.price ?:0
             println("Your Booking amount is: $bookingAmount")
             println("Your refund amount is: ${cd.total_fair- bookingAmount}")
         }
-        else
+        else {
             println("-Only Booking amount was paid so no REFUND-")
-        cust.removeCust(cid)
+            bookingAmount=0;
+        }
+        cust.removeCust(cid, bookingAmount)
         if (roomDetail != null) {
             roomD.incRoom(roomDetail.type)
         }

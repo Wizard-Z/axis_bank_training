@@ -65,4 +65,16 @@ class roomsDAO{
         val count = st?.executeUpdate() // not required to pass query here.
         println("$count row/s updated!")
     }
+    fun showTrans(){
+        println("Showing transaction table...\n>>>")
+        println("Format:\n| C.id| Name| Amount| Booking-Date")
+        val st = conn?.createStatement()
+        var rs = st?.executeQuery("SELECT * from trans")
+        if (rs != null) {
+            while (rs.next()) {
+                println("${rs.getInt(1)} : ${rs.getString(2)} : ${rs.getFloat(3)} : ${rs.getDate(4)}")
+            }
+        }
+
+    }
 }

@@ -67,7 +67,7 @@ fun main(){
     }
     catch(e:Exception){
         println("Err. : ${e.message}")
-        println(e.printStackTrace())
+        //println(e.printStackTrace())
     }
     finally {
         println("Done!!")

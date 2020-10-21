@@ -65,7 +65,7 @@ fun book_room(cid:Int){
         //total_fair:Int,full_pay:String,val pay_method:String
         val c:Customers= Customers(cid,cname,type,days,fare.toFloat(),fullP,methodP)
         println("OBJ:$c")
-        cust.insertCust(c)
+        cust.insertCust(c,roomDetails.price)
         println("Your details are:\n>>> ${cust.getCustDetails(cid)}")
 
         //cust.showAll()

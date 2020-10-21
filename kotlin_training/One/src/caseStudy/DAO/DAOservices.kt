@@ -21,7 +21,7 @@ fun getConnection(dbName:String) {
                 if (stmt.execute("use $dbName")) {
                     println("$dbName connected")
                 }else {
-                    println("Not connected")
+                    println("---")
                 }
             }catch(e:Exception){
                 println("$dbName not connected")
