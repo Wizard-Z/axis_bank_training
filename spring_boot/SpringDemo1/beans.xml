@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="point1" class="com.sourabh.bean.Point">
+        <property name="x" value="96"/>
+        <property name="y" value="88"/>
+    </bean>
+
+    <bean id="point2" class="com.sourabh.bean.Point">
+        <property name="x" value="196"/>
+        <property name="y" value="569"/>
+    </bean>
+
+    <bean id="Line" class="com.sourabh.bean.Line" autowire="byName">
+        <property name="point2" ref="point2"/>
+        <property name="point1" ref="point1"/>
+    </bean>
+
+    <bean id="triangle" class="com.sourabh.bean.Triangle">
+        <property name="point2" ref="point2"/>
+        <property name="point1" ref="point1"/>
+        <property name="point3">
+            <bean class="com.sourabh.bean.Point">
+                <property name="x" value="0"/>
+                <property name="y" value="0"/>
+            </bean>
+
+        </property>
+
+    </bean>
+
+</beans>
