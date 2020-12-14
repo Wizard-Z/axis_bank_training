@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="customerSetter" class="com.sourabh.bean.Customer"
+          autowire="byType">
+        <property name="name" value="a good customer" />
+        <property name="cid" value ="12"/>
+    </bean>
+    <bean id="address" class="com.sourabh.bean.Address">
+        <property name="streetNo" value="122"/>
+        <property name="streetName" value="Ali baba ke gali"/>
+        <property name="city" value="Patna"/>
+
+    </bean>
+
+    <bean id="contact" class="com.sourabh.bean.Contact">
+        <property name="name" value="Mobile"/>
+        <property name="numbers">
+            <list>
+                <value>123456</value>
+                <value>996624584</value>
+            </list>
+
+        </property>
+        
+
+    </bean>
+    <bean id = "customerConstructor" class="com.sourabh.bean.Customer">
+        <constructor-arg name="name" value="Alfred"/>
+        <constructor-arg name="cid" value="122"/>
+        <constructor-arg name="address" ref="address"/>
+    </bean>
+
+
+
+</beans>
