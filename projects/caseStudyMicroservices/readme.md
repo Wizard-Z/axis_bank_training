@@ -121,4 +121,4 @@ volumes:
 
 
 ## Todo:
-Sonarqube, jenkins
+ jenkins, k8s, 
