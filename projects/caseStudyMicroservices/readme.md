@@ -5,7 +5,7 @@ This project uses 3 microservices and client side discovery using **Eureka-namin
 Uses Mongodb as the persistance database.
 UI - React. 
 
-## Project-over-view:
+## Project-overview:
 
 ![alt overview](img/pic1.png "Project-overview")
 
