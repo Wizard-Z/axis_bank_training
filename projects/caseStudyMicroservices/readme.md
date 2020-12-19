@@ -49,7 +49,7 @@ services:
     - mongodata:/data/db
 
   eureka-naming-server:
-    image: eureka-naming-server:0.0.1-SNAPSHOT
+    image: sourabhhbar/eureka-naming-server:latest
     container_name: eureka-naming-server
     restart: always
     ports:
@@ -58,7 +58,7 @@ services:
       - database
 
   booking-service:
-    image: booking-service:0.0.1-SNAPSHOT
+    image: sourabhhbar/booking-service:latest
     container_name: booking-service
     restart: always
     environment:
@@ -75,7 +75,7 @@ services:
       - database
 
   hotel-service:
-    image: hotel-service:0.0.1-SNAPSHOT
+    image: sourabhhbar/hotel-service:latest
     container_name: hotel-service
     restart: always
     environment:
@@ -91,7 +91,7 @@ services:
       - eureka-naming-server
       - database
   demo-app-service:
-    image: demo-app-service:0.0.1-SNAPSHOT
+    image: sourabhhbar/demo-app-service:latest
     container_name: demo-app-service
     restart: always
     environment:
